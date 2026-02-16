@@ -20,7 +20,7 @@ class DeepfakeDetector:
             model_path: Path to trained model file
             img_size: Input image size
         '''
-        self.model = keras.models.load_model(model_path)
+        self.model = keras.models.load_model(model_path, compile=False)
         self.processor = VideoProcessor(img_size)
         self.img_size = img_size
         print(f"Model loaded successfully from: {model_path}")
